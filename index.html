@@ -11,7 +11,7 @@
 			// Asking the user to pick one of the choices.
 			var computerChoices = ["r", "p", "s"];
 
-			// Creating variables to hold the number of wins, losses, and ties.
+			// Creating variables to hold the number of wins, losses, and ties, starting at 0.
 			var wins = 0;
 			var losses = 0;
 			var ties = 0;
@@ -21,12 +21,21 @@
 				var computerGuess =
 					computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-				//Testing if it's working correctly.
-				console.log(computerGuess);
-
 				// Collect the user's response and convert to lower case.
 				var userGuess = prompt("Enter r, p, or s to play!");
 				userGuess = userGuess.toLowerCase();
+
+				// Only run game logic if user chose a valid option.
+				if (userGuess === "r" || userGuess === "p" || userGuess === "s") {
+					alert("The computer chose " + computerGuess);
+
+					// Check the win conditions.
+					if (userGuess === "r" && computerGuess === "s") {
+						// Increment the wins variable up one and alert the user that they've won that number of times.
+						wins++;
+						alert("You've won " + wins + " time(s)!");
+					}
+				}
 			}
 		</script>
 	</body>
