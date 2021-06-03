@@ -30,10 +30,20 @@
 					alert("The computer chose " + computerGuess);
 
 					// Check the win conditions.
-					if (userGuess === "r" && computerGuess === "s") {
+					if (
+						(userGuess === "r" && computerGuess === "s") ||
+						(userGuess === "s" && computerGuess === "p") ||
+						(userGuess === "p" && computerGuess === "r")
+					) {
 						// Increment the wins variable up one and alert the user that they've won that number of times.
 						wins++;
 						alert("You've won " + wins + " time(s)!");
+					} else if (userGuess === computerGuess) {
+						ties++;
+						alert("You've tied " + ties + " time(s).");
+					} else {
+						losses++;
+						alert("You've lost " + losses + " time(s).");
 					}
 				}
 			}
