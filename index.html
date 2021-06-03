@@ -9,14 +9,21 @@
 		<script>
 			// Setting up our variables and array.
 			// Asking the user to pick one of the choices.
-			var userChoice = prompt("Rock, Paper, Scissors? (pick one)");
-			var choices = ["Rock, Paper, Scissors"];
-			var picks = choices.toLowerCase();
+			var computerChoices = ["r", "p", "s"];
 
 			// Creating variables to hold the number of wins, losses, and ties.
 			var wins = 0;
 			var losses = 0;
 			var ties = 0;
+
+			for (var i = 0; i < 10; i++) {
+				// Collect the user's response and convert to lower case.
+				var userGuess = prompt("Enter r, p, or s to play!");
+				userGuess = userGuess.toLowerCase();
+
+				// Test if it's working correctly
+				console.log(userGuess);
+			}
 		</script>
 	</body>
 </html>
